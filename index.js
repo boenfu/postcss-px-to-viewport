@@ -26,10 +26,13 @@ var ignoreNextComment = 'px-to-viewport-ignore-next';
 var ignorePrevComment = 'px-to-viewport-ignore';
 
 module.exports = postcss.plugin('@doen/postcss-px-to-viewport', function (optionsList) {
-    optionsList = optionsList.map(function (opts) {
+    optionsList = optionsList.map(function (options) {
+      var opts = objectAssign({}, defaults, options);
+
       checkRegExpOrArray(opts, 'exclude');
       checkRegExpOrArray(opts, 'include');
-      return objectAssign({}, defaults, options);
+
+      return opts;
     });
 
   var landscapeRules = [];
