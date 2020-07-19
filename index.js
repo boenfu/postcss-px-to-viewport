@@ -25,7 +25,7 @@ var defaults = {
 var ignoreNextComment = 'px-to-viewport-ignore-next';
 var ignorePrevComment = 'px-to-viewport-ignore';
 
-module.exports = postcss.plugin('postcss-px-to-viewport', function (optionsList) {
+module.exports = postcss.plugin('@doen/postcss-px-to-viewport', function (optionsList) {
     optionsList = optionsList.map(function (opts) {
       checkRegExpOrArray(opts, 'exclude');
       checkRegExpOrArray(opts, 'include');
